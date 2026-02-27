@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply - DevSpace</title>
+  <meta name="description" content="Apply for a free DevSpace subdomain. Follow these simple steps to get your developer subdomain.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="logo - Copy.png" type="image/x-icon"   rel="shortcut icon"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="DevSpace">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="apply.html" class="active">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="abuse.html">Abuse Policy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" style="padding: 2rem 0;">
+      <h1>Apply for a Subdomain</h1>
+      <p class="subtitle">Follow these steps to request your free developer subdomain.</p>
+    </section>
+
+    <section class="section">
+      <h2>Application Steps</h2>
+      
+      <ol class="steps-list">
+        <li>
+          <strong>Fork the registry repository</strong><br>
+          Visit the DevSpace registry repository on GitHub and fork it to your account.
+        </li>
+        <li>
+          <strong>Add your JSON configuration file</strong><br>
+          Create a new JSON file in the appropriate directory with your subdomain details.
+        </li>
+        <li>
+          <strong>Open a Pull Request</strong><br>
+          Submit your changes as a Pull Request for manual review and approval.
+        </li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>JSON Format</h2>
+      <p>Create a JSON file with your desired username. The filename should match your username (e.g., <code>alex.json</code>).</p>
+      
+      <div class="code-block">
+        <pre>{
+  <span class="key">"username"</span>: <span class="string">"alex"</span>,
+  <span class="key">"target"</span>: <span class="string">"alex.github.io"</span>,
+  <span class="key">"provider"</span>: <span class="string">"github"</span>
+}</pre>
+      </div>
+
+      <h3>Field Descriptions</h3>
+      <ul class="rules-list">
+        <li><strong>username</strong> — Your desired subdomain (e.g., "alex" becomes alex.devspace.qzz.io)</li>
+        <li><strong>target</strong> — Your current hosting domain (e.g., alex.github.io or your-project.vercel.app)</li>
+        <li><strong>provider</strong> — Hosting provider: "github" or "vercel"</li>
+      </ul>
+
+      <div class="info-box">
+        <p><strong>Note:</strong> For Vercel deployments, use "vercel" as the provider and your-project.vercel.app as the target.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Vercel Example</h2>
+      <p>If you're hosting on Vercel, your configuration would look like this:</p>
+      
+      <div class="code-block">
+        <pre>{
+  <span class="key">"username"</span>: <span class="string">"sarah"</span>,
+  <span class="key">"target"</span>: <span class="string">"my-project.vercel.app"</span>,
+  <span class="key">"provider"</span>: <span class="string">"vercel"</span>
+}</pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Before You Apply</h2>
+      <p>Make sure you have:</p>
+      <ul class="rules-list">
+        <li>A live site hosted on GitHub Pages or Vercel</li>
+        <li>A public repository (for GitHub Pages)</li>
+        <li>Custom domain configured in your hosting settings</li>
+        <li>Read and understood the <a href="rules.html">Rules</a></li>
+      </ul>
+
+      <div class="info-box warning">
+        <p><strong>Important:</strong> Applications without a live site or proper configuration will be rejected. All applications are manually reviewed.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Ready to Apply?</h2>
+      <p>Click the button below to visit the registry repository and start your application.</p>
+      
+      <div class="cta-group" style="margin-top: 2rem;">
+        <a href="https://github.com/devspace-qzz-io/register" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          Fork Registry Repo
+        </a>
+        <a href="rules.html" class="btn btn-secondary">Review Rules</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Processing Time</h2>
+      <p>All applications are manually reviewed. Please allow a few days for your request to be processed. You will receive updates via the Pull Request discussion.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="https://github.com/devspace-qzz-io/register" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://anveshraman.qzz.io"><img src="owner.png" style="width: auto; height: 100px;"></a>
+      </div>
+      <span class="footer-text">Powered by DevSpace</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
