@@ -63,19 +63,27 @@
       <p>Create a JSON file with your desired username. The filename should match your username (e.g., <code>alex.json</code>).</p>
       
       <div class="code-block">
-        <pre>{
-  <span class="key">"username"</span>: <span class="string">"alex"</span>,
-  <span class="key">"target"</span>: <span class="string">"alex.github.io"</span>,
-  <span class="key">"provider"</span>: <span class="string">"github"</span>
-}</pre>
+        <pre><code>{
+  <span class="key">"domain"</span>: <span class="string">"yourname"</span>,
+  <span class="key">"owner"</span>: {
+    <span class="key">"github"</span>: <span class="string">"yourusername"</span>,
+    <span class="key">"email"</span>: <span class="string">"your@email.com"</span>
+  },
+  <span class="key">"record"</span>: {
+    <span class="key">"type"</span>: <span class="string">"CNAME"</span>,
+    <span class="key">"value"</span>: <span class="string">"yourusername.github.io"</span>
+  }
+}</code></pre>
       </div>
 
       <h3>Field Descriptions</h3>
-      <ul class="rules-list">
-        <li><strong>username</strong> — Your desired subdomain (e.g., "alex" becomes alex.devspace.qzz.io)</li>
-        <li><strong>target</strong> — Your current hosting domain (e.g., alex.github.io or your-project.vercel.app)</li>
-        <li><strong>provider</strong> — Hosting provider: "github" or "vercel"</li>
-      </ul>
+<ul class="rules-list">
+  <li><strong>domain</strong> — The requested subdomain label. For example, "alex" becomes alex.devspace.qzz.io.</li>
+  <li><strong>owner.github</strong> — GitHub username of the domain owner. Used for verification and contact.</li>
+  <li><strong>owner.email</strong> — Contact email address of the domain owner.</li>
+  <li><strong>record.type</strong> — DNS record type. Must be "CNAME". No other record types are allowed.</li>
+  <li><strong>record.value</strong> — The approved hosting target (e.g., alex.github.io, yourproject.vercel.app).</li>
+</ul>
 
       <div class="info-box">
         <p><strong>Note:</strong> For Vercel deployments, use "vercel" as the provider and your-project.vercel.app as the target.</p>
@@ -87,11 +95,17 @@
       <p>If you're hosting on Vercel, your configuration would look like this:</p>
       
       <div class="code-block">
-        <pre>{
-  <span class="key">"username"</span>: <span class="string">"sarah"</span>,
-  <span class="key">"target"</span>: <span class="string">"my-project.vercel.app"</span>,
-  <span class="key">"provider"</span>: <span class="string">"vercel"</span>
-}</pre>
+        <pre><code>{
+  <span class="key">"domain"</span>: <span class="string">"myproject"</span>,
+  <span class="key">"owner"</span>: {
+    <span class="key">"github"</span>: <span class="string">"developer"</span>,
+    <span class="key">"email"</span>: <span class="string">"dev@example.com"</span>
+  },
+  <span class="key">"record"</span>: {
+    <span class="key">"type"</span>: <span class="string">"CNAME"</span>,
+    <span class="key">"value"</span>: <span class="string">"cname.vercel-dns.com"</span>
+  }
+}</code></pre>
       </div>
     </section>
 
